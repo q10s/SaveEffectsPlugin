@@ -123,9 +123,8 @@ public class Main extends JavaPlugin implements Listener{
 				}
 			}
 			}, 1);
-		}
-		if(playerResp.hasPermission("saveeffects")) 
-		{
+		
+		
 		Bukkit.getScheduler().runTaskLater(this, () -> {
 		
 			if(savedEffects.containsKey(playerResp)) {
@@ -137,8 +136,7 @@ public class Main extends JavaPlugin implements Listener{
 			}
 			}, 1);
 		}
-		if(playerResp.hasPermission("saveeffects")) 
-		{
+		
 		Bukkit.getScheduler().runTaskLater(this, () -> {
 			for (Map.Entry<Player, List<PotionEffect>> entry : savedEffects.entrySet()) 
 				if(entry.getKey() == playerResp) {
@@ -149,6 +147,4 @@ public class Main extends JavaPlugin implements Listener{
 		
 	}
 	
-	
-}
 
