@@ -1,0 +1,9 @@
+name: SaveEffects
+main: org.save.effects.Main
+author: SenQ
+version: 1.00
+description: Plugin saves the effects of the player after death
+permissions:
+  saveeffects:
+    default: op
+    description: Allows players to save effects after death
