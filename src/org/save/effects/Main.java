@@ -114,7 +114,6 @@ public class Main extends JavaPlugin implements Listener{
 		Bukkit.getScheduler().runTaskLater(this, () -> {
 			
 			if(longSavedEffects.containsKey(playerResp.getDisplayName())) {
-			playerResp.sendMessage("Effects restored from long list");
 				
 			for (Map.Entry<String, List<PotionEffect>> entry : longSavedEffects.entrySet()) 
 				if(Objects.equal(entry.getKey(), playerResp.getDisplayName())) {
@@ -123,21 +122,20 @@ public class Main extends JavaPlugin implements Listener{
 				longSavedEffects.remove(entry.getKey());
 				}
 			}
-			}, 30);
+			}, 1);
 		}
 		if(playerResp.hasPermission("saveeffects")) 
 		{
 		Bukkit.getScheduler().runTaskLater(this, () -> {
 		
 			if(savedEffects.containsKey(playerResp)) {
-			playerResp.sendMessage("Effects restored");
 			for (Map.Entry<Player, List<PotionEffect>> entry : savedEffects.entrySet()) 
 				if(entry.getKey() == playerResp) {
 				for(PotionEffect effect: entry.getValue())
 					playerResp.addPotionEffect(effect);
 				}
 			}
-			}, 10);
+			}, 1);
 		}
 		if(playerResp.hasPermission("saveeffects")) 
 		{
@@ -146,7 +144,7 @@ public class Main extends JavaPlugin implements Listener{
 				if(entry.getKey() == playerResp) {
 					savedEffects.remove(entry.getKey());
 				}
-		}, 11);
+		}, 2);
 		}
 		
 	}
